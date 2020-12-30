@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/day01
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+#  mvc:
+#    static-path-pattern: /static/**
+
+
+#mybatis:
+#  type-aliases-package: com.spbdata.pojo
+#  mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+  level:
+    root: info
+    com.imcoding: debug
+  file:
+    path: log/blog.log
+
