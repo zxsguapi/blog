@@ -1,46 +1,59 @@
 package com.zx.service.impl;
 
+import com.zx.dao.TypeDao;
 import com.zx.pojo.Type;
 import com.zx.service.TypeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 public class TypeServiceImpl implements TypeService {
 
-    private
+    @Autowired
+    private TypeDao typeDao;
 
+
+
+    @Transactional
     @Override
     public int saveType(Type type) {
-        return 0;
+        return typeDao.saveType(type);
     }
 
+    @Transactional
     @Override
     public Type getType(Long id) {
-        return null;
+        return typeDao.getType(id);
     }
 
+    @Transactional
     @Override
     public List<Type> getAllType() {
-        return null;
+        return typeDao.getAllType();
     }
 
     @Override
     public List<Type> getAllTypeAndBlog() {
-        return null;
+        return typeDao.getAllTypeAndBlog();
     }
 
     @Override
     public Type getTypeByName(String name) {
-        return null;
+        return typeDao.getTypeByName(name);
     }
 
+    @Transactional
     @Override
     public int updateType(Type type) {
-        return 0;
+        return typeDao.updateType(type);
     }
 
+    @Transactional
     @Override
     public void deleteType(Long id) {
-
+        typeDao.deleteType(id);
     }
+
+
 }
