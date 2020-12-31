@@ -10,7 +10,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
 
 @Aspect
 @Component
@@ -45,27 +44,4 @@ public class LogAspect {
         logger.info("Result:{}" , result);
     }
 
-    private class RequestLog{
-        private String  url;
-        private String  ip;
-        private String  classMethod;
-        private Object[]    args;
-
-        @Override
-        public String toString() {
-            return "RequestLog{" +
-                    "url='" + url + '\'' +
-                    ", ip='" + ip + '\'' +
-                    ", classMethod='" + classMethod + '\'' +
-                    ", args=" + Arrays.toString(args) +
-                    '}';
-        }
-
-        public RequestLog(String url, String ip, String classMethod, Object[] args) {
-            this.url = url;
-            this.ip = ip;
-            this.classMethod = classMethod;
-            this.args = args;
-        }
-    }
 }
